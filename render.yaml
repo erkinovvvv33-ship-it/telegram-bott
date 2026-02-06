@@ -2,5 +2,12 @@ services:
   - type: worker
     name: telegram-bot
     plan: free
-    buildCommand: ""
+    buildCommand: "pip install -r requirements.txt"
     startCommand: "python main.py"
+    env:
+      - key: TELEGRAM_BOT_TOKEN
+        value: ""
+      - key: GROQ_API_KEY
+        value: ""
+      - key: ADMIN_ID
+        value: ""
