@@ -7,10 +7,11 @@ services:
     startCommand: gunicorn my_project.wsgi:application
     envVars:
       - key: PYTHON_VERSION
-        value: 3.10.0
+        value: "3.10.0"
       - key: SECRET_KEY
         generateValue: true
 
+# BU QATOR ENG CHEKKADA BO'LISHI KERAK
 databases:
   - name: postgres-db
     plan: free
