@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: python-app
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && python manage.py migrate
+    startCommand: gunicorn my_project.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: SECRET_KEY
+        generateValue: true # Render avtomat ravishda kalit yaratadi
+
+databases:
+  - name: postgres-db
+    plan: free
